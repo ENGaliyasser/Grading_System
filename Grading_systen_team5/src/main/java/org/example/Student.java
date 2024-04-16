@@ -17,6 +17,8 @@ public class Student {
         this.oralPracticalMark = oralPracticalMark;
         this.midtermMark = midtermMark;
         this.finalMark = finalMark;
+        sum = activitiesMark + oralPracticalMark + midtermMark + finalMark;
+
     }
 
 
