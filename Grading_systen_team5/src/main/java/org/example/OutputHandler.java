@@ -1,5 +1,8 @@
 package org.example;
 
+import java.io.FileWriter;
+import java.io.IOException;
+
 public class OutputHandler {
 
     public static String write(Subject subject) {
@@ -52,6 +55,19 @@ public class OutputHandler {
 
         /* Returning this Table as a String to be written into the output file */
         return sb.toString();
+    }
+
+    public static void writeFile(Subject subject) {
+        String table = write(subject);
+
+        try {
+            FileWriter writer = new FileWriter("output.txt");
+            writer.write(table);
+            writer.close();
+            System.out.println("Table successfully written to output.txt");
+        } catch (IOException e) {
+            System.out.println("An error occurred while writing the table to output.txt: " + e.getMessage());
+        }
     }
 }
 

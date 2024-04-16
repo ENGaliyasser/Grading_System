@@ -15,6 +15,7 @@ public class Main {
 
         if (ali != null) {
             String outputString = OutputHandler.write(ali);
+            OutputHandler.writeFile(ali);
             System.out.println(outputString);
         }
     }
