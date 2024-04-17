@@ -9,8 +9,10 @@ public class Student {
     private int finalMark;
     private int sum;
     public final static String ERROR_SUM = "Error: the sum of marks must be a positive number between 0 and 100.\n";
-    public final static int    ERROR_GPA = -1;
-    public Student(String name, String number, int activitiesMark, int oralPracticalMark, int midtermMark, int finalMark) {
+    public final static int ERROR_GPA = -1;
+
+    public Student(String name, String number, int activitiesMark, int oralPracticalMark, int midtermMark,
+            int finalMark) {
         this.name = name;
         this.number = number;
         this.activitiesMark = activitiesMark;
@@ -20,8 +22,6 @@ public class Student {
         sum = activitiesMark + oralPracticalMark + midtermMark + finalMark;
 
     }
-
-
 
     public Student(String s) {
         String[] attr = s.split(",");
@@ -36,36 +36,36 @@ public class Student {
 
     // Getters for student attributes
 
-    public String getName()
-    {
+    public String getName() {
         return name;
     }
 
-    public String getStudentNumber()
-    {
+    public String getStudentNumber() {
         return number;
     }
 
-    public int getActivitiesMark()
-    {
+    public int getActivitiesMark() {
         return activitiesMark;
     }
-    public int getOral_practicalMark()
-    {
+
+    public int getOral_practicalMark() {
         return oralPracticalMark;
     }
-    public int getMidtermMark()
-    {
+
+    public int getMidtermMark() {
         return midtermMark;
     }
-    public int getFinalMark()
-    {
+
+    public int getFinalMark() {
         return finalMark;
     }
 
-    public int getSum()
-    {
+    public int getSum() {
         return sum;
+    }
+
+    public void setSum(int sum) {
+        this.sum = sum;
     }
 
     public static double calculateGPA(int sum) {
@@ -89,12 +89,13 @@ public class Student {
             return 1.3;
         else if (sum >= 60 && sum < 64)
             return 1.0;
-        else if(sum<60 && sum>0)
+        else if (sum < 60 && sum > 0)
             return 0;
-        else return ERROR_GPA;
-
+        else
+            return ERROR_GPA;
 
     }
+
     public String calculateGrade() {
         if (sum >= 97)
             return "A+";
@@ -118,9 +119,10 @@ public class Student {
             return "D+";
         else if (sum >= 60 && sum < 64)
             return "D";
-        else if(sum<60 && sum>0)
+        else if (sum < 60 && sum >= 0)
             return "F";
-        else return ERROR_SUM;
+        else
+            return ERROR_SUM;
     }
 
     public double calculateGPA() {
@@ -144,12 +146,13 @@ public class Student {
             return 1.3;
         else if (sum >= 60 && sum < 64)
             return 1.0;
-        else if(sum<60 && sum>0)
+        else if (sum < 60 && sum >= 0)
             return 0;
-        else return ERROR_GPA;
-
+        else
+            return ERROR_GPA;
 
     }
+
     public static String calculateGrade(int sum) {
         if (sum >= 97)
             return "A+";
@@ -173,9 +176,9 @@ public class Student {
             return "D+";
         else if (sum >= 60 && sum < 64)
             return "D";
-        else if(sum<60 && sum>0)
+        else if (sum < 60 && sum > 0)
             return "F";
-        else return ERROR_SUM;
+        else
+            return ERROR_SUM;
     }
 }
-

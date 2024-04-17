@@ -8,7 +8,7 @@ public class Main {
         Subject ali;
 
         if (args.length == 0) {
-            ali = InputHandler.read("E:\\Grading_System\\Grading_systen_team5\\src\\main\\resources\\Subject.txt");
+            ali = InputHandler.read("C:\\Users\\youssef\\Desktop\\programing\\Testing\\project\\Grading_System\\Grading_systen_team5\\src\\main\\resources\\Subject.txt");
         } else {
             ali = InputHandler.read(args[0]);
         }
