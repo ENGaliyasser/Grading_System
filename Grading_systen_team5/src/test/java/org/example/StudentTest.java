@@ -54,72 +54,72 @@ class StudentTest {
     }
 
     @Test
-    void nameWithSingleInput() {
+    void getNameWithSingleInput() {
         assertEquals("aliiiii", studentSingleInputCons.getName());
     }
 
     @Test
-    void numberWithSingleInput() {
+    void getNumberWithSingleInput() {
         assertEquals("12345678", studentSingleInputCons.getStudentNumber());
     }
 
     @Test
-    void activitiesWithSingleInput() {
+    void getActivitiesWithSingleInput() {
         assertEquals(10, studentSingleInputCons.getActivitiesMark());
     }
 
     @Test
-    void oralWithSingleInput() {
+    void getOralWithSingleInput() {
         assertEquals(10, studentSingleInputCons.getOral_practicalMark());
     }
 
     @Test
-    void midtermWithSingleInput() {
+    void getMidtermWithSingleInput() {
         assertEquals(20, studentSingleInputCons.getMidtermMark());
     }
 
     @Test
-    void finalWithSingleInput() {
+    void getFinalWithSingleInput() {
         assertEquals(55, studentSingleInputCons.getFinalMark());
     }
 
     @Test
-    void sumWithSingleInput() {
+    void getSumWithSingleInput() {
         assertEquals(95, studentSingleInputCons.getSum());
     }
 
     @Test
-    void nameWithMultInput() {
+    void getNameWithMultInput() {
         assertEquals("shebl", studentMultInputCons.getName());
     }
 
     @Test
-    void numberWithMultInput() {
+    void getNumberWithMultInput() {
         assertEquals("333", studentMultInputCons.getStudentNumber());
     }
 
     @Test
-    void activitiesWithMultInput() {
+    void getActivitiesWithMultInput() {
         assertEquals(10, studentMultInputCons.getActivitiesMark());
     }
 
     @Test
-    void oralWithMultInput() {
+    void getOralWithMultInput() {
         assertEquals(7, studentMultInputCons.getOral_practicalMark());
     }
 
     @Test
-    void midtermWithMultInput() {
+    void getMidtermWithMultInput() {
         assertEquals(16, studentMultInputCons.getMidtermMark());
     }
 
     @Test
-    void finalWithMultInput() {
+    void getFinalWithMultInput() {
         assertEquals(60, studentMultInputCons.getFinalMark());
     }
 
     @Test
-    void sumWithMultInput() {
+    void getSumWithMultInput() {
         assertEquals(93, studentMultInputCons.getSum());
     }
 
