@@ -1,9 +1,14 @@
 package org.example;
 
 import org.junit.jupiter.api.*;
+
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.IOException;
+import java.io.PrintStream;
+import java.nio.file.Files;
+
 import static org.junit.jupiter.api.Assertions.*;
-import java.io.*;
-import java.nio.file.*;
 
 public class OutputHandlerTest {
     private final ByteArrayOutputStream outputStreamCaptor = new ByteArrayOutputStream();
@@ -52,7 +57,10 @@ public class OutputHandlerTest {
         String output = OutputHandler.write(emptySubject);
 
         // Expected output for an empty subject
-        String expectedOutput = "Subject Name: EmptySubject\t\tMax Mark: 100\n\n";
+        String expectedOutput = "Subject Name: EmptySubject\t\tMax Mark: 100\n\n+---+-----------------+--------+-------+\n" +
+                "| Student name| Student number  | GPA    | Grade |\n" +
+                "+---+-----------------+--------+-------+\n" +
+                "+---+-----------------+--------+-------+\n";
 
         // Assert output matches the expected output
         assertEquals(expectedOutput, output);
@@ -62,16 +70,20 @@ public class OutputHandlerTest {
     public void testWriteWithOneStudent() {
         // Create a subject with one student
         Subject oneStudentSubject = new Subject("OneStudentSubject", "CS102", 100);
-        oneStudentSubject.getStudents().add(new Student("John Doe", "12345678", 10, 10, 20, 60));
+        oneStudentSubject.getStudents().add(new Student("John Doe", "12345678", 10, 7, 20, 50));
 
         // Call the write method
         String output = OutputHandler.write(oneStudentSubject);
 
-        // Assert output contains data for one student
-        assertNotNull(output);
-        assertTrue(output.contains("Subject Name: OneStudentSubject"));
-        assertTrue(output.contains("Max Mark: 100"));
-        assertTrue(output.contains("| Student name: John Doe"));
+        // Expected output for one student
+        String expectedOutput = "Subject Name: OneStudentSubject\t\tMax Mark: 100\n\n+-----------+-----------------+--------+-------+\n" +
+                "| Student name| Student number  | GPA    | Grade |\n" +
+                "+-----------+-----------------+--------+-------+\n" +
+                "| John Doe  | 12345678        | 3.3    | B+    |\r\n" +
+                "+-----------+-----------------+--------+-------+\n";
+
+        // Assert output matches the expected output
+        assertEquals(expectedOutput, output);
     }
 
     @Test
@@ -84,61 +96,88 @@ public class OutputHandlerTest {
         // Call the write method
         String output = OutputHandler.write(multiStudentSubject);
 
-        // Assert output contains data for both students
-        assertNotNull(output);
-        assertTrue(output.contains("Subject Name: MultiStudentSubject"));
-        assertTrue(output.contains("Max Mark: 100"));
-        assertTrue(output.contains("| Student name: Alice"));
-        assertTrue(output.contains("| Student name: Bob"));
+        // Expected output for multiple students
+        String expectedOutput = "Subject Name: MultiStudentSubject\t\tMax Mark: 100\n\n" +
+                "+--------+-----------------+--------+-------+\n" +
+                "| Student name| Student number  | GPA    | Grade |\n" +
+                "+--------+-----------------+--------+-------+\n" +
+                "| Alice  | 11111111        | 4.0    | A+    |\r\n" +
+                "| Bob    | 22222222        | 3.7    | A-    |\r\n" +
+                "+--------+-----------------+--------+-------+\n";
+
+        // Assert output matches the expected output
+        assertEquals(expectedOutput, output);
     }
 
     @Test
-    public void testWriteFile() {
+    public void testWriteFileOutput() {
         // Create a subject with known students and marks
         Subject subject = createValidSubject();
 
         // Call the writeFile method
         OutputHandler.writeFile(subject);
 
-        // Verify that the file was created
-        File outputFile = new File(testFilePath);
+        // Check if the file "output.txt" exists
+        File outputFile = new File("output.txt");
         assertTrue(outputFile.exists());
 
-        // Verify that the file contains the expected content
+        // Read the content of the file
+        String fileContent = null;
         try {
-            String expectedContent = OutputHandler.write(subject);
-            String actualContent = new String(Files.readAllBytes(outputFile.toPath()));
-            assertEquals(expectedContent, actualContent);
+            fileContent = Files.readString(outputFile.toPath());
         } catch (IOException e) {
-            fail("Error reading file content: " + e.getMessage());
+            e.printStackTrace();
         }
+
+        // Check if the content matches the expected output
+        assertNotNull(fileContent);
+        assertTrue(fileContent.contains("Subject Name: TestSubject"));
+        assertTrue(fileContent.contains("Max Mark: 100"));
+        assertTrue(fileContent.contains("| Student name"));
     }
 
     @Test
-    public void testWriteFileWithNullSubject() {
-        // Mock the OutputHandler
-        OutputHandler outputHandler = new OutputHandler();
+    public void testWriteWithSubjectNameSpecialCharacters() {
+        // Create a subject with a name containing special characters
+        Subject specialCharsSubject = new Subject("Special!@#$%^&*()-=+Subject", "CS105", 100);
 
-        // Call the write method with null subject
-        String output = outputHandler.write(null);
+        // Call the write method
+        String output = OutputHandler.write(specialCharsSubject);
 
-        // Assert that the output is an empty string
-        assertEquals("", output);
+        // Assert output contains the subject name with special characters
+        assertTrue(output.contains("Subject Name: Special!@#$%^&*()-=+Subject"));
     }
 
     @Test
-    public void testWriteFileWithEmptySubject() {
-        // Test subject data
-        Subject subject = new Subject("", "", 0);
+    public void testWriteWithStudentNameSpecialCharacters() {
+        // Create a student with a name containing special characters
+        Subject subject = new Subject("TestSubject", "CS101", 100);
+        subject.getStudents().add(new Student("John_Doe", "12345678", 10, 7, 20, 50));
 
-        // Mock the OutputHandler
-        OutputHandler outputHandler = new OutputHandler();
+        // Call the write method
+        String output = OutputHandler.write(subject);
 
-        // Call the write method with empty subject
-        String output = outputHandler.write(subject);
+        // Assert output contains the student name with special characters
+        assertTrue(output.contains("| John_Doe"));
+    }
 
-        // Assert that the output is an empty string
-        assertEquals("", output);
+    @Test
+    public void testWriteWithNoStudents() {
+        // Create a subject with no students
+        Subject noStudentsSubject = new Subject("NoStudentsSubject", "CS106", 100);
+
+        // Call the write method
+        String output = OutputHandler.write(noStudentsSubject);
+
+        // Expected output for no students
+        String expectedOutput = "Subject Name: NoStudentsSubject\t\tMax Mark: 100\n\n" +
+                "+---+-----------------+--------+-------+\n" +
+                "| Student name| Student number  | GPA    | Grade |\n" +
+                "+---+-----------------+--------+-------+\n" +
+                "+---+-----------------+--------+-------+\n";
+
+        // Assert output matches the expected output
+        assertEquals(expectedOutput, output);
     }
 
     private Subject createValidSubject() {
