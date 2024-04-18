@@ -12,7 +12,7 @@ public class InputHandler {
         Subject subject = null;
 
         try {
-            reader = new BufferedReader(new FileReader(filename));
+            reader = new BufferedReader(new FileReader(filename));//file reader function throws the FileNotFoundException
             String line = reader.readLine();
 
             // Read the first line for subject data
@@ -20,13 +20,13 @@ public class InputHandler {
                 subject = new Subject(line);
                 String subjectValidationResult = SubjectValidator.checkSubjectData(subject);
                 if (!subjectValidationResult.isEmpty()) {
-                    System.out.println("Error in subject data:");
-                    System.out.println(subjectValidationResult);
+                    System.out.print("Error in subject data:\n");
+                    System.out.print(subjectValidationResult);
                     reader.close();
                     return null;
                 }
             } else {
-                System.out.println("No subject data found. Subject data must be in the first line.");
+                System.out.print("No subject data found. Subject data must be in the first line.\n");
                 reader.close();
                 return null;
             }
@@ -40,24 +40,25 @@ public class InputHandler {
                     Student student = new Student(line);
                     String studentValidationResult = StudentValidator.checkStudentData(student);
                     if (!studentValidationResult.isEmpty()) {
-                        System.out.println("Error in student data:");
-                        System.out.println(studentValidationResult);
+                        System.out.print("Error in student data:\n");
+                        System.out.print(studentValidationResult);
                     } else {
                         subject.getStudents().add(student);
                     }
                 }
+
             }
 
             reader.close();
 
+
         } catch (IOException e) {
-            System.out.println("Invalid file name. File could not be opened.");
+            System.out.print("Invalid file name. File could not be opened.\n");
             e.printStackTrace();
         }
 
-        if (subject == null) {
-            System.out.println("File is empty or contains no valid subject data.");
-        }
+
+
 
         return subject;
     }

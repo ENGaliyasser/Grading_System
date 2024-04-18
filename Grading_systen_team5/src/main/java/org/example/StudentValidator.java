@@ -20,7 +20,7 @@ public class StudentValidator {
 
     public String checkStudentName() {
         String s = student.getName();
-        if(s.length()==0) return STRING_EMPTY;
+        if(s.isEmpty()) return STRING_EMPTY;
         if(s.charAt(0)==' ') return STUDENT_NAME_SPACE;
         for(char c : s.toCharArray()) {
             if(!Character.isAlphabetic(c)) {
