@@ -35,8 +35,8 @@ public class InputHandler {
             subject.setStudents(new ArrayList<>());
 
             // Read the remaining lines for student data
-            while ((line = reader.readLine()) != null) {
-                if (!line.isEmpty()) {
+            do {
+                if (line.isEmpty()) {
                     Student student = new Student(line);
                     String studentValidationResult = StudentValidator.checkStudentData(student);
                     if (!studentValidationResult.isEmpty()) {
@@ -46,8 +46,9 @@ public class InputHandler {
                         subject.getStudents().add(student);
                     }
                 }
+                else { System.out.print(StudentValidator.STRING_EMPTY);return null;}
 
-            }
+            }while ((line = reader.readLine()) != null);
 
             reader.close();
 
