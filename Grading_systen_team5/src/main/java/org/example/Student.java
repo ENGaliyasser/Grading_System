@@ -89,7 +89,7 @@ public class Student {
             return 1.3;
         else if (sum >= 60 && sum < 64)
             return 1.0;
-        else if (sum < 60 && sum > 0)
+        else if (sum < 60 && sum >= 0)
             return 0;
         else
             return ERROR_GPA;
@@ -176,7 +176,7 @@ public class Student {
             return "D+";
         else if (sum >= 60 && sum < 64)
             return "D";
-        else if (sum < 60 && sum > 0)
+        else if (sum < 60 && sum >= 0)
             return "F";
         else
             return ERROR_SUM;

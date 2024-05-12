@@ -57,7 +57,8 @@ public class OutputHandlerTest {
         String output = OutputHandler.write(emptySubject);
 
         // Expected output for an empty subject
-        String expectedOutput = "Subject Name: EmptySubject\t\tMax Mark: 100\n\n+---+-----------------+--------+-------+\n" +
+        String expectedOutput = "Subject Name: EmptySubject\t\tMax Mark: 100\n\n+---+-----------------+--------+-------+\n"
+                +
                 "| Student name| Student number  | GPA    | Grade |\n" +
                 "+---+-----------------+--------+-------+\n" +
                 "+---+-----------------+--------+-------+\n";
@@ -76,7 +77,8 @@ public class OutputHandlerTest {
         String output = OutputHandler.write(oneStudentSubject);
 
         // Expected output for one student
-        String expectedOutput = "Subject Name: OneStudentSubject\t\tMax Mark: 100\n\n+-----------+-----------------+--------+-------+\n" +
+        String expectedOutput = "Subject Name: OneStudentSubject\t\tMax Mark: 100\n\n+-----------+-----------------+--------+-------+\n"
+                +
                 "| Student name| Student number  | GPA    | Grade |\n" +
                 "+-----------+-----------------+--------+-------+\n" +
                 "| John Doe  | 12345678        | 3.3    | B+    |\r\n" +

@@ -1,6 +1,6 @@
 package org.example;
 
-class SubjectValidator {
+public class SubjectValidator {
     private final Subject subject;
     public static final String ERROR_MAX_DEGREE = "Error: Max degree must be one of the following values: 100.\n";
     public final static String STRING_EMPTY = "Error: Subject Name is empty.\n";

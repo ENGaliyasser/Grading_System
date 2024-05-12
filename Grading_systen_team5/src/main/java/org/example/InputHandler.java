@@ -12,7 +12,8 @@ public class InputHandler {
         Subject subject = null;
 
         try {
-            reader = new BufferedReader(new FileReader(filename));//file reader function throws the FileNotFoundException
+            reader = new BufferedReader(new FileReader(filename));// file reader function throws the
+                                                                  // FileNotFoundException
             String line = reader.readLine();
 
             // Read the first line for subject data
@@ -37,6 +38,7 @@ public class InputHandler {
             // Read the remaining lines for student data
             do {
                 if (line.isEmpty()) {
+
                     Student student = new Student(line);
                     String studentValidationResult = StudentValidator.checkStudentData(student);
                     if (!studentValidationResult.isEmpty()) {
@@ -45,23 +47,20 @@ public class InputHandler {
                     } else {
                         subject.getStudents().add(student);
                     }
+                } else {
+                    System.out.print(StudentValidator.STRING_EMPTY);
+                    return null;
                 }
-                else { System.out.print(StudentValidator.STRING_EMPTY);return null;}
 
-            }while ((line = reader.readLine()) != null);
+            } while ((line = reader.readLine()) != null);
 
             reader.close();
-
 
         } catch (IOException e) {
             System.out.print("Invalid file name. File could not be opened.\n");
             e.printStackTrace();
         }
 
-
-
-
         return subject;
     }
 }
-
