@@ -1,4 +1,9 @@
-import org.junit.Assert;
+package org.BlackBoxTest;
+
+import org.example.Main;
+import org.example.StudentValidator;
+
+import org.example.SubjectValidator;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.io.TempDir;
 
@@ -6,6 +11,8 @@ import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.security.PublicKey;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
 public class BlackBoxTest {
@@ -37,7 +44,7 @@ public class BlackBoxTest {
         String[] arr=new String[]{tempFile.toString()};
 
         Main.main(arr);
-        Assert.assertEquals("Error in student data:\n"+
+        assertEquals("Error in student data:\n"+
                 StudentValidator.ERROR_ACTIVITES_MARK+
                 "Table successfully written to output.txt\n"+
                 "Subject Name: Math"+"\t\t"+"Max Mark: 100\n\n" +
@@ -60,7 +67,7 @@ public class BlackBoxTest {
         String[] arr=new String[]{tempFile.toString()};
 
         Main.main(arr);
-        Assert.assertEquals(
+        assertEquals(
                 "Table successfully written to output.txt\n"+
                 "Subject Name: Math"+"\t\t"+"Max Mark: 100\n\n" +
                 "+--------+-----------------+--------+-------+\n" +
@@ -80,7 +87,7 @@ public class BlackBoxTest {
         String[] arr=new String[]{tempFile.toString()};
 
         Main.main(arr);
-        Assert.assertEquals(
+       assertEquals(
                 "Table successfully written to output.txt\n"+
                         "Subject Name: Math"+"\t\t"+"Max Mark: 100\n\n" +
                         "+--------+-----------------+--------+-------+\n" +
@@ -99,7 +106,7 @@ public class BlackBoxTest {
         String[] arr=new String[]{tempFile.toString()};
 
         Main.main(arr);
-        Assert.assertEquals(
+       assertEquals(
                 "Table successfully written to output.txt\n"+
                         "Subject Name: Math"+"\t\t"+"Max Mark: 100\n\n" +
                         "+--------+-----------------+--------+-------+\n" +
@@ -119,7 +126,7 @@ public class BlackBoxTest {
         String[] arr=new String[]{tempFile.toString()};
 
         Main.main(arr);
-        Assert.assertEquals(
+       assertEquals(
                 "Table successfully written to output.txt\n"+
                         "Subject Name: Math"+"\t\t"+"Max Mark: 100\n\n" +
                         "+--------+-----------------+--------+-------+\n" +
@@ -139,7 +146,7 @@ public class BlackBoxTest {
         String[] arr=new String[]{tempFile.toString()};
 
         Main.main(arr);
-        Assert.assertEquals(
+       assertEquals(
                 "Table successfully written to output.txt\n"+
                         "Subject Name: Math"+"\t\t"+"Max Mark: 100\n\n" +
                         "+--------+-----------------+--------+-------+\n" +
@@ -159,7 +166,7 @@ public class BlackBoxTest {
         String[] arr=new String[]{tempFile.toString()};
 
         Main.main(arr);
-        Assert.assertEquals(
+       assertEquals(
                 "Error in student data:\n"+
         StudentValidator.ERROR_ACTIVITES_MARK+
                 "Table successfully written to output.txt\n"+
@@ -182,7 +189,7 @@ public class BlackBoxTest {
         String[] arr=new String[]{tempFile.toString()};
 
         Main.main(arr);
-        Assert.assertEquals("Error in student data:\n"+
+       assertEquals("Error in student data:\n"+
                 StudentValidator.ERROR_MIDTERM_MARK+
                 "Table successfully written to output.txt\n"+
                 "Subject Name: Math"+"\t\t"+"Max Mark: 100\n\n" +
@@ -202,7 +209,7 @@ public class BlackBoxTest {
         String[] arr=new String[]{tempFile.toString()};
 
         Main.main(arr);
-        Assert.assertEquals(
+       assertEquals(
                 "Table successfully written to output.txt\n"+
                         "Subject Name: Math"+"\t\t"+"Max Mark: 100\n\n" +
                         "+--------+-----------------+--------+-------+\n" +
@@ -222,7 +229,7 @@ public class BlackBoxTest {
         String[] arr=new String[]{tempFile.toString()};
 
         Main.main(arr);
-        Assert.assertEquals(
+       assertEquals(
                 "Table successfully written to output.txt\n"+
                         "Subject Name: Math"+"\t\t"+"Max Mark: 100\n\n" +
                         "+--------+-----------------+--------+-------+\n" +
@@ -242,7 +249,7 @@ public class BlackBoxTest {
         String[] arr=new String[]{tempFile.toString()};
 
         Main.main(arr);
-        Assert.assertEquals(
+       assertEquals(
                 "Table successfully written to output.txt\n"+
                         "Subject Name: Math"+"\t\t"+"Max Mark: 100\n\n" +
                         "+--------+-----------------+--------+-------+\n" +
@@ -262,7 +269,7 @@ public class BlackBoxTest {
         String[] arr=new String[]{tempFile.toString()};
 
         Main.main(arr);
-        Assert.assertEquals(
+       assertEquals(
                 "Table successfully written to output.txt\n"+
                         "Subject Name: Math"+"\t\t"+"Max Mark: 100\n\n" +
                         "+--------+-----------------+--------+-------+\n" +
@@ -282,7 +289,7 @@ public class BlackBoxTest {
         String[] arr=new String[]{tempFile.toString()};
 
         Main.main(arr);
-        Assert.assertEquals(
+       assertEquals(
                 "Table successfully written to output.txt\n"+
                         "Subject Name: Math"+"\t\t"+"Max Mark: 100\n\n" +
                         "+--------+-----------------+--------+-------+\n" +
@@ -302,7 +309,7 @@ public class BlackBoxTest {
         String[] arr=new String[]{tempFile.toString()};
 
         Main.main(arr);
-        Assert.assertEquals(
+       assertEquals(
                 "Error in student data:\n"+
                         StudentValidator.ERROR_MIDTERM_MARK+
                         "Table successfully written to output.txt\n"+
@@ -326,7 +333,7 @@ public class BlackBoxTest {
         String[] arr=new String[]{tempFile.toString()};
 
         Main.main(arr);
-        Assert.assertEquals(
+       assertEquals(
                 "Error in student data:\n"+
                         StudentValidator.ERROR_ORAL_MARK+
                         "Table successfully written to output.txt\n"+
@@ -347,7 +354,7 @@ public class BlackBoxTest {
         String[] arr=new String[]{tempFile.toString()};
 
         Main.main(arr);
-        Assert.assertEquals(
+       assertEquals(
                 "Table successfully written to output.txt\n"+
                         "Subject Name: Math"+"\t\t"+"Max Mark: 100\n\n" +
                         "+--------+-----------------+--------+-------+\n" +
@@ -367,7 +374,7 @@ public class BlackBoxTest {
         String[] arr=new String[]{tempFile.toString()};
 
         Main.main(arr);
-        Assert.assertEquals(
+       assertEquals(
                 "Error in student data:\n"+
                         StudentValidator.ERROR_ORAL_MARK+
                         "Table successfully written to output.txt\n"+
@@ -391,7 +398,7 @@ public class BlackBoxTest {
         String[] arr=new String[]{tempFile.toString()};
 
         Main.main(arr);
-        Assert.assertEquals(
+       assertEquals(
                 "Error in student data:\n"+
                         StudentValidator.ERROR_FINAL_MARK+
                         "Table successfully written to output.txt\n"+
@@ -412,7 +419,7 @@ public class BlackBoxTest {
         String[] arr=new String[]{tempFile.toString()};
 
         Main.main(arr);
-        Assert.assertEquals(
+       assertEquals(
                 "Table successfully written to output.txt\n"+
                         "Subject Name: Math"+"\t\t"+"Max Mark: 100\n\n" +
                         "+--------+-----------------+--------+-------+\n" +
@@ -432,7 +439,7 @@ public class BlackBoxTest {
         String[] arr=new String[]{tempFile.toString()};
 
         Main.main(arr);
-        Assert.assertEquals(
+       assertEquals(
                 "Error in student data:\n"+
                         StudentValidator.ERROR_FINAL_MARK+
                         "Table successfully written to output.txt\n"+
@@ -456,7 +463,7 @@ public class BlackBoxTest {
         String[] arr=new String[]{tempFile.toString()};
 
         Main.main(arr);
-        Assert.assertEquals(
+       assertEquals(
                 "Error in subject data:\n"+
                         SubjectValidator.SUBJECT_CODE_INVALID_LENGTH,output.toString());
     }
@@ -471,7 +478,7 @@ public class BlackBoxTest {
         String[] arr=new String[]{tempFile.toString()};
 
         Main.main(arr);
-        Assert.assertEquals(
+       assertEquals(
                 "Error in subject data:\n"+
                         SubjectValidator.SUBJECT_CODE_HAS_NUMBERS,output.toString());
     }
@@ -488,7 +495,7 @@ public class BlackBoxTest {
         String[] arr=new String[]{tempFile.toString()};
 
         Main.main(arr);
-        Assert.assertEquals(
+       assertEquals(
                 "Error in subject data:\n"+
                         SubjectValidator.SUBJECT_CODE_HAS_LETTERS,output.toString());
     }
@@ -505,7 +512,7 @@ public class BlackBoxTest {
         String[] arr=new String[]{tempFile.toString()};
 
         Main.main(arr);
-        Assert.assertEquals(
+       assertEquals(
                 "Error in subject data:\n"+
                         SubjectValidator.SUBJECT_CODE_END,output.toString());
     }
@@ -521,7 +528,7 @@ public class BlackBoxTest {
         String[] arr=new String[]{tempFile.toString()};
 
         Main.main(arr);
-        Assert.assertEquals(
+       assertEquals(
                 "Table successfully written to output.txt\n"+
                         "Subject Name: Math"+"\t\t"+"Max Mark: 100\n\n" +
                         "+--------+-----------------+--------+-------+\n" +
@@ -541,7 +548,7 @@ public class BlackBoxTest {
         String[] arr=new String[]{tempFile.toString()};
 
         Main.main(arr);
-        Assert.assertEquals(
+       assertEquals(
                 "Table successfully written to output.txt\n"+
                         "Subject Name: Math"+"\t\t"+"Max Mark: 100\n\n" +
                         "+--------+-----------------+--------+-------+\n" +
@@ -565,7 +572,7 @@ public void StudNameRule1() throws IOException {
     String[] arr=new String[]{tempFile.toString()};
 
     Main.main(arr);
-    Assert.assertEquals(
+   assertEquals(
             "Error in student data:\n"+
             StudentValidator.STRING_EMPTY+
             "Table successfully written to output.txt\n"+
@@ -587,7 +594,7 @@ public void StudNameRule1() throws IOException {
         String[] arr=new String[]{tempFile.toString()};
 
         Main.main(arr);
-        Assert.assertEquals(
+       assertEquals(
                 "Error in student data:\n"+
                         StudentValidator.STUDENT_NAME_SPACE+
                         "Table successfully written to output.txt\n"+
@@ -609,7 +616,7 @@ public void StudNameRule1() throws IOException {
         String[] arr=new String[]{tempFile.toString()};
 
         Main.main(arr);
-        Assert.assertEquals(
+       assertEquals(
                 "Error in student data:\n"+
                         StudentValidator.STUDENT_NAME_SPACE+
                         "Table successfully written to output.txt\n"+
@@ -631,7 +638,7 @@ public void StudNameRule1() throws IOException {
         String[] arr=new String[]{tempFile.toString()};
 
         Main.main(arr);
-        Assert.assertEquals(
+       assertEquals(
                 "Error in student data:\n"+
                         StudentValidator.STUDENT_NAME_INVALID+
                         "Table successfully written to output.txt\n"+
@@ -653,7 +660,7 @@ public void StudNameRule1() throws IOException {
         String[] arr=new String[]{tempFile.toString()};
 
         Main.main(arr);
-        Assert.assertEquals(
+       assertEquals(
                 "Table successfully written to output.txt\n"+
                         "Subject Name: Math"+"\t\t"+"Max Mark: 100\n\n" +
                         "+--------+-----------------+--------+-------+\n" +
