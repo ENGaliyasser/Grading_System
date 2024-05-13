@@ -1,4 +1,3 @@
-<<<<<<< HEAD:Grading_systen_team5/src/test/java/org/WhiteBoxTest/BasisPathCoverageTest.java
 package org.WhiteBoxTest;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
