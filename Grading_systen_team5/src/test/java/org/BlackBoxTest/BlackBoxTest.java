@@ -46,12 +46,12 @@ public class BlackBoxTest {
         Main.main(arr);
         assertEquals("Error in student data:\n"+
                 StudentValidator.ERROR_ACTIVITES_MARK+
-                "Table successfully written to output.txt\n"+
+                "Table successfully written to output.txt\r\n"+
                 "Subject Name: Math"+"\t\t"+"Max Mark: 100\n\n" +
                 "+---+-----------------+--------+-------+\n" +
                 "| Student name| Student number  | GPA    | Grade |\n" +
                 "+---+-----------------+--------+-------+\n" +
-                "+---+-----------------+--------+-------+\n",output.toString());
+                "+---+-----------------+--------+-------+\n\r\n",output.toString());
 
 
 /// ACTIVITIES MIN
@@ -68,13 +68,13 @@ public class BlackBoxTest {
 
         Main.main(arr);
         assertEquals(
-                "Table successfully written to output.txt\n"+
+                "Table successfully written to output.txt\r\n"+
                 "Subject Name: Math"+"\t\t"+"Max Mark: 100\n\n" +
                 "+--------+-----------------+--------+-------+\n" +
                 "| Student name| Student number  | GPA    | Grade |\n" +
                 "+--------+-----------------+--------+-------+\n" +
                         "| Donia  | 20004000        | 3.7    | A-    |\r\n"+
-                "+--------+-----------------+--------+-------+\n",output.toString());
+                "+--------+-----------------+--------+-------+\n\r\n",output.toString());
     }
     @Test
     public void BVA_ActivitiesAboveMin() throws IOException {
@@ -88,13 +88,13 @@ public class BlackBoxTest {
 
         Main.main(arr);
        assertEquals(
-                "Table successfully written to output.txt\n"+
+                "Table successfully written to output.txt\r\n"+
                         "Subject Name: Math"+"\t\t"+"Max Mark: 100\n\n" +
                         "+--------+-----------------+--------+-------+\n" +
                         "| Student name| Student number  | GPA    | Grade |\n" +
                         "+--------+-----------------+--------+-------+\n" +
                         "| Donia  | 20004000        | 3.7    | A-    |\r\n"+
-                        "+--------+-----------------+--------+-------+\n",output.toString());}
+                        "+--------+-----------------+--------+-------+\n\r\n",output.toString());}
     @Test
     public void BVA_ActivitiesAtNorm() throws IOException {
 /// ACTIVITIES NORM
@@ -107,13 +107,13 @@ public class BlackBoxTest {
 
         Main.main(arr);
        assertEquals(
-                "Table successfully written to output.txt\n"+
+                "Table successfully written to output.txt\r\n"+
                         "Subject Name: Math"+"\t\t"+"Max Mark: 100\n\n" +
                         "+--------+-----------------+--------+-------+\n" +
                         "| Student name| Student number  | GPA    | Grade |\n" +
                         "+--------+-----------------+--------+-------+\n" +
                         "| Donia  | 20004000        | 4.0    | A+    |\r\n"+
-                        "+--------+-----------------+--------+-------+\n",output.toString());
+                        "+--------+-----------------+--------+-------+\n\r\n",output.toString());
     }
     @Test
     public void BVA_ActivitiesBelowMax() throws IOException {
@@ -127,13 +127,13 @@ public class BlackBoxTest {
 
         Main.main(arr);
        assertEquals(
-                "Table successfully written to output.txt\n"+
+                "Table successfully written to output.txt\r\n"+
                         "Subject Name: Math"+"\t\t"+"Max Mark: 100\n\n" +
                         "+--------+-----------------+--------+-------+\n" +
                         "| Student name| Student number  | GPA    | Grade |\n" +
                         "+--------+-----------------+--------+-------+\n" +
                         "| Donia  | 20004000        | 4.0    | A+    |\r\n"+
-                        "+--------+-----------------+--------+-------+\n",output.toString());
+                        "+--------+-----------------+--------+-------+\n\r\n",output.toString());
     }
     @Test
     public void BVA_ActivitiesAtMax() throws IOException {
@@ -147,13 +147,13 @@ public class BlackBoxTest {
 
         Main.main(arr);
        assertEquals(
-                "Table successfully written to output.txt\n"+
+                "Table successfully written to output.txt\r\n"+
                         "Subject Name: Math"+"\t\t"+"Max Mark: 100\n\n" +
                         "+--------+-----------------+--------+-------+\n" +
                         "| Student name| Student number  | GPA    | Grade |\n" +
                         "+--------+-----------------+--------+-------+\n" +
                         "| Donia  | 20004000        | 4.0    | A+    |\r\n"+
-                        "+--------+-----------------+--------+-------+\n",output.toString());
+                        "+--------+-----------------+--------+-------+\n\r\n",output.toString());
     }
     @Test
     public void BVA_ActivitiesAboveMax() throws IOException {
@@ -169,12 +169,12 @@ public class BlackBoxTest {
        assertEquals(
                 "Error in student data:\n"+
         StudentValidator.ERROR_ACTIVITES_MARK+
-                "Table successfully written to output.txt\n"+
+                "Table successfully written to output.txt\r\n"+
                 "Subject Name: Math"+"\t\t"+"Max Mark: 100\n\n" +
                 "+---+-----------------+--------+-------+\n" +
                 "| Student name| Student number  | GPA    | Grade |\n" +
                 "+---+-----------------+--------+-------+\n" +
-                "+---+-----------------+--------+-------+\n",output.toString());
+                "+---+-----------------+--------+-------+\n\r\n",output.toString());
     }
 
     //////////////////////////// Boundary Value Analysis on Midterm Mark ///////////////////////////////////
@@ -191,12 +191,12 @@ public class BlackBoxTest {
         Main.main(arr);
        assertEquals("Error in student data:\n"+
                 StudentValidator.ERROR_MIDTERM_MARK+
-                "Table successfully written to output.txt\n"+
+                "Table successfully written to output.txt\r\n"+
                 "Subject Name: Math"+"\t\t"+"Max Mark: 100\n\n" +
                 "+---+-----------------+--------+-------+\n" +
                 "| Student name| Student number  | GPA    | Grade |\n" +
                 "+---+-----------------+--------+-------+\n" +
-                "+---+-----------------+--------+-------+\n",output.toString());
+                "+---+-----------------+--------+-------+\n\r\n",output.toString());
     }
     @Test
     public void BVA_MidtermAtMin() throws IOException {
@@ -210,13 +210,13 @@ public class BlackBoxTest {
 
         Main.main(arr);
        assertEquals(
-                "Table successfully written to output.txt\n"+
+                "Table successfully written to output.txt\r\n"+
                         "Subject Name: Math"+"\t\t"+"Max Mark: 100\n\n" +
                         "+--------+-----------------+--------+-------+\n" +
                         "| Student name| Student number  | GPA    | Grade |\n" +
                         "+--------+-----------------+--------+-------+\n" +
                         "| Donia  | 20004000        | 2.7    | B-    |\r\n"+
-                        "+--------+-----------------+--------+-------+\n",output.toString());
+                        "+--------+-----------------+--------+-------+\n\r\n",output.toString());
     }
     @Test
     public void BVA_MidtermAboveMin() throws IOException {
@@ -230,13 +230,13 @@ public class BlackBoxTest {
 
         Main.main(arr);
        assertEquals(
-                "Table successfully written to output.txt\n"+
+                "Table successfully written to output.txt\r\n"+
                         "Subject Name: Math"+"\t\t"+"Max Mark: 100\n\n" +
                         "+--------+-----------------+--------+-------+\n" +
                         "| Student name| Student number  | GPA    | Grade |\n" +
                         "+--------+-----------------+--------+-------+\n" +
                         "| Donia  | 20004000        | 2.7    | B-    |\r\n"+
-                        "+--------+-----------------+--------+-------+\n",output.toString());
+                        "+--------+-----------------+--------+-------+\n\r\n",output.toString());
     }
     @Test
     public void BVA_MidtermAtNorm() throws IOException {
@@ -250,13 +250,13 @@ public class BlackBoxTest {
 
         Main.main(arr);
        assertEquals(
-                "Table successfully written to output.txt\n"+
+                "Table successfully written to output.txt\r\n"+
                         "Subject Name: Math"+"\t\t"+"Max Mark: 100\n\n" +
                         "+--------+-----------------+--------+-------+\n" +
                         "| Student name| Student number  | GPA    | Grade |\n" +
                         "+--------+-----------------+--------+-------+\n" +
                         "| Donia  | 20004000        | 4.0    | A     |\r\n"+
-                        "+--------+-----------------+--------+-------+\n",output.toString());
+                        "+--------+-----------------+--------+-------+\n\r\n",output.toString());
     }
     @Test
     public void BVA_MidtermBelowMax() throws IOException {
@@ -270,13 +270,13 @@ public class BlackBoxTest {
 
         Main.main(arr);
        assertEquals(
-                "Table successfully written to output.txt\n"+
+                "Table successfully written to output.txt\r\n"+
                         "Subject Name: Math"+"\t\t"+"Max Mark: 100\n\n" +
                         "+--------+-----------------+--------+-------+\n" +
                         "| Student name| Student number  | GPA    | Grade |\n" +
                         "+--------+-----------------+--------+-------+\n" +
                         "| Donia  | 20004000        | 4.0    | A     |\r\n"+
-                        "+--------+-----------------+--------+-------+\n",output.toString());
+                        "+--------+-----------------+--------+-------+\n\r\n",output.toString());
     }
     @Test
     public void BVA_MidtermAtMax() throws IOException {
@@ -290,13 +290,13 @@ public class BlackBoxTest {
 
         Main.main(arr);
        assertEquals(
-                "Table successfully written to output.txt\n"+
+                "Table successfully written to output.txt\r\n"+
                         "Subject Name: Math"+"\t\t"+"Max Mark: 100\n\n" +
                         "+--------+-----------------+--------+-------+\n" +
                         "| Student name| Student number  | GPA    | Grade |\n" +
                         "+--------+-----------------+--------+-------+\n" +
                         "| Donia  | 20004000        | 4.0    | A     |\r\n"+
-                        "+--------+-----------------+--------+-------+\n",output.toString());
+                        "+--------+-----------------+--------+-------+\n\r\n",output.toString());
     }
     @Test
     public void BVA_MidtermAboveMax() throws IOException {
@@ -312,12 +312,12 @@ public class BlackBoxTest {
        assertEquals(
                 "Error in student data:\n"+
                         StudentValidator.ERROR_MIDTERM_MARK+
-                        "Table successfully written to output.txt\n"+
+                        "Table successfully written to output.txt\r\n"+
                         "Subject Name: Math"+"\t\t"+"Max Mark: 100\n\n" +
                         "+---+-----------------+--------+-------+\n" +
                         "| Student name| Student number  | GPA    | Grade |\n" +
                         "+---+-----------------+--------+-------+\n" +
-                        "+---+-----------------+--------+-------+\n",output.toString());
+                        "+---+-----------------+--------+-------+\n\r\n",output.toString());
     }
 
 
@@ -336,12 +336,12 @@ public class BlackBoxTest {
        assertEquals(
                 "Error in student data:\n"+
                         StudentValidator.ERROR_ORAL_MARK+
-                        "Table successfully written to output.txt\n"+
+                        "Table successfully written to output.txt\r\n"+
                         "Subject Name: Math"+"\t\t"+"Max Mark: 100\n\n" +
                         "+---+-----------------+--------+-------+\n" +
                         "| Student name| Student number  | GPA    | Grade |\n" +
                         "+---+-----------------+--------+-------+\n" +
-                        "+---+-----------------+--------+-------+\n",output.toString());
+                        "+---+-----------------+--------+-------+\n\r\n",output.toString());
     }
     @Test
     public void EQU_OralValidClass() throws IOException {
@@ -355,13 +355,13 @@ public class BlackBoxTest {
 
         Main.main(arr);
        assertEquals(
-                "Table successfully written to output.txt\n"+
+                "Table successfully written to output.txt\r\n"+
                         "Subject Name: Math"+"\t\t"+"Max Mark: 100\n\n" +
                         "+--------+-----------------+--------+-------+\n" +
                         "| Student name| Student number  | GPA    | Grade |\n" +
                         "+--------+-----------------+--------+-------+\n" +
                         "| Donia  | 20004000        | 3.7    | A-    |\r\n"+
-                        "+--------+-----------------+--------+-------+\n",output.toString());
+                        "+--------+-----------------+--------+-------+\n\r\n",output.toString());
     }
     @Test
     public void EQU_OralInvalidAboveClass() throws IOException {
@@ -377,12 +377,12 @@ public class BlackBoxTest {
        assertEquals(
                 "Error in student data:\n"+
                         StudentValidator.ERROR_ORAL_MARK+
-                        "Table successfully written to output.txt\n"+
+                        "Table successfully written to output.txt\r\n"+
                         "Subject Name: Math"+"\t\t"+"Max Mark: 100\n\n" +
                         "+---+-----------------+--------+-------+\n" +
                         "| Student name| Student number  | GPA    | Grade |\n" +
                         "+---+-----------------+--------+-------+\n" +
-                        "+---+-----------------+--------+-------+\n",output.toString());
+                        "+---+-----------------+--------+-------+\n\r\n",output.toString());
     }
 
 
@@ -401,12 +401,12 @@ public class BlackBoxTest {
        assertEquals(
                 "Error in student data:\n"+
                         StudentValidator.ERROR_FINAL_MARK+
-                        "Table successfully written to output.txt\n"+
+                        "Table successfully written to output.txt\r\n"+
                         "Subject Name: Math"+"\t\t"+"Max Mark: 100\n\n" +
                         "+---+-----------------+--------+-------+\n" +
                         "| Student name| Student number  | GPA    | Grade |\n" +
                         "+---+-----------------+--------+-------+\n" +
-                        "+---+-----------------+--------+-------+\n",output.toString());
+                        "+---+-----------------+--------+-------+\n\r\n",output.toString());
     }
     @Test
     public void EQU_FinalValidClass() throws IOException {
@@ -420,13 +420,13 @@ public class BlackBoxTest {
 
         Main.main(arr);
        assertEquals(
-                "Table successfully written to output.txt\n"+
+                "Table successfully written to output.txt\r\n"+
                         "Subject Name: Math"+"\t\t"+"Max Mark: 100\n\n" +
                         "+--------+-----------------+--------+-------+\n" +
                         "| Student name| Student number  | GPA    | Grade |\n" +
                         "+--------+-----------------+--------+-------+\n" +
                         "| Donia  | 20004000        | 3.7    | A-    |\r\n"+
-                        "+--------+-----------------+--------+-------+\n",output.toString());
+                        "+--------+-----------------+--------+-------+\n\r\n",output.toString());
     }
     @Test
     public void EQU_FinalInvalidAboveClass() throws IOException {
@@ -442,12 +442,12 @@ public class BlackBoxTest {
        assertEquals(
                 "Error in student data:\n"+
                         StudentValidator.ERROR_FINAL_MARK+
-                        "Table successfully written to output.txt\n"+
+                        "Table successfully written to output.txt\r\n"+
                         "Subject Name: Math"+"\t\t"+"Max Mark: 100\n\n" +
                         "+---+-----------------+--------+-------+\n" +
                         "| Student name| Student number  | GPA    | Grade |\n" +
                         "+---+-----------------+--------+-------+\n" +
-                        "+---+-----------------+--------+-------+\n",output.toString());
+                        "+---+-----------------+--------+-------+\n\r\n",output.toString());
     }
 
     //////////////////////////// Decision Table on Subject Code  /////////////////////////////
@@ -529,13 +529,13 @@ public class BlackBoxTest {
 
         Main.main(arr);
        assertEquals(
-                "Table successfully written to output.txt\n"+
+                "Table successfully written to output.txt\r\n"+
                         "Subject Name: Math"+"\t\t"+"Max Mark: 100\n\n" +
                         "+--------+-----------------+--------+-------+\n" +
                         "| Student name| Student number  | GPA    | Grade |\n" +
                         "+--------+-----------------+--------+-------+\n" +
                         "| Donia  | 20004000        | 3.7    | A-    |\r\n"+
-                        "+--------+-----------------+--------+-------+\n",output.toString());
+                        "+--------+-----------------+--------+-------+\n\r\n",output.toString());
     }
     @Test
     public void SubjectCodeRule6() throws IOException {
@@ -549,13 +549,13 @@ public class BlackBoxTest {
 
         Main.main(arr);
        assertEquals(
-                "Table successfully written to output.txt\n"+
+                "Table successfully written to output.txt\r\n"+
                         "Subject Name: Math"+"\t\t"+"Max Mark: 100\n\n" +
                         "+--------+-----------------+--------+-------+\n" +
                         "| Student name| Student number  | GPA    | Grade |\n" +
                         "+--------+-----------------+--------+-------+\n" +
                         "| Donia  | 20004000        | 3.7    | A-    |\r\n"+
-                        "+--------+-----------------+--------+-------+\n",output.toString());
+                        "+--------+-----------------+--------+-------+\n\r\n",output.toString());
     }
 
 
@@ -575,12 +575,12 @@ public void StudNameRule1() throws IOException {
    assertEquals(
             "Error in student data:\n"+
             StudentValidator.STRING_EMPTY+
-            "Table successfully written to output.txt\n"+
+            "Table successfully written to output.txt\r\n"+
             "Subject Name: Math"+"\t\t"+"Max Mark: 100\n\n" +
             "+---+-----------------+--------+-------+\n" +
             "| Student name| Student number  | GPA    | Grade |\n" +
             "+---+-----------------+--------+-------+\n" +
-            "+---+-----------------+--------+-------+\n",output.toString());
+            "+---+-----------------+--------+-------+\n\r\n",output.toString());
 }
     @Test
     public void StudNameRule2() throws IOException {
@@ -597,12 +597,12 @@ public void StudNameRule1() throws IOException {
        assertEquals(
                 "Error in student data:\n"+
                         StudentValidator.STUDENT_NAME_SPACE+
-                        "Table successfully written to output.txt\n"+
+                        "Table successfully written to output.txt\r\n"+
                         "Subject Name: Math"+"\t\t"+"Max Mark: 100\n\n" +
                         "+---+-----------------+--------+-------+\n" +
                         "| Student name| Student number  | GPA    | Grade |\n" +
                         "+---+-----------------+--------+-------+\n" +
-                        "+---+-----------------+--------+-------+\n",output.toString());
+                        "+---+-----------------+--------+-------+\n\r\n",output.toString());
     }
 
     @Test
@@ -619,12 +619,12 @@ public void StudNameRule1() throws IOException {
        assertEquals(
                 "Error in student data:\n"+
                         StudentValidator.STUDENT_NAME_SPACE+
-                        "Table successfully written to output.txt\n"+
+                        "Table successfully written to output.txt\r\n"+
                         "Subject Name: Math"+"\t\t"+"Max Mark: 100\n\n" +
                         "+---+-----------------+--------+-------+\n" +
                         "| Student name| Student number  | GPA    | Grade |\n" +
                         "+---+-----------------+--------+-------+\n" +
-                        "+---+-----------------+--------+-------+\n",output.toString());
+                        "+---+-----------------+--------+-------+\n\r\n",output.toString());
     }
 
     @Test
@@ -641,12 +641,12 @@ public void StudNameRule1() throws IOException {
        assertEquals(
                 "Error in student data:\n"+
                         StudentValidator.STUDENT_NAME_INVALID+
-                        "Table successfully written to output.txt\n"+
+                        "Table successfully written to output.txt\r\n"+
                         "Subject Name: Math"+"\t\t"+"Max Mark: 100\n\n" +
                         "+---+-----------------+--------+-------+\n" +
                         "| Student name| Student number  | GPA    | Grade |\n" +
                         "+---+-----------------+--------+-------+\n" +
-                        "+---+-----------------+--------+-------+\n",output.toString());
+                        "+---+-----------------+--------+-------+\n\r\n",output.toString());
     }
 
     @Test
@@ -661,13 +661,13 @@ public void StudNameRule1() throws IOException {
 
         Main.main(arr);
        assertEquals(
-                "Table successfully written to output.txt\n"+
+                "Table successfully written to output.txt\r\n"+
                         "Subject Name: Math"+"\t\t"+"Max Mark: 100\n\n" +
                         "+--------+-----------------+--------+-------+\n" +
                         "| Student name| Student number  | GPA    | Grade |\n" +
                         "+--------+-----------------+--------+-------+\n" +
                         "| Donia  | 20004000        | 3.7    | A-    |\r\n"+
-                        "+--------+-----------------+--------+-------+\n",output.toString());
+                        "+--------+-----------------+--------+-------+\n\r\n",output.toString());
     }
 
 
