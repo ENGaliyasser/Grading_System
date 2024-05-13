@@ -34,11 +34,9 @@ public class InputHandler {
 
             // Initialize array list for students
             subject.setStudents(new ArrayList<>());
-
-            // Read the remaining lines for student data
-            do {
-                if (line.isEmpty()) {
-
+            line = reader.readLine();
+            if(line!=null) {
+                if (!line.isEmpty()) {
                     Student student = new Student(line);
                     String studentValidationResult = StudentValidator.checkStudentData(student);
                     if (!studentValidationResult.isEmpty()) {
@@ -47,12 +45,25 @@ public class InputHandler {
                     } else {
                         subject.getStudents().add(student);
                     }
-                } else {
-                    System.out.print(StudentValidator.STRING_EMPTY);
-                    return null;
                 }
+                //else { System.out.print(StudentValidator.STRING_EMPTY);return null;}
+            }
+            else { System.out.print("Error: no Students");return null;}
+            // Read the remaining lines for student data
+            while ((line = reader.readLine()) != null) {
+                        if (!line.isEmpty()) {
+                            Student student = new Student(line);
+                            String studentValidationResult = StudentValidator.checkStudentData(student);
+                            if (!studentValidationResult.isEmpty()) {
+                                System.out.print("Error in student data:\n");
+                                System.out.print(studentValidationResult);
+                            } else {
+                                subject.getStudents().add(student);
+                            }
+                        }
+                        //else { System.out.print(StudentValidator.STRING_EMPTY);return null;}
 
-            } while ((line = reader.readLine()) != null);
+                    }
 
             reader.close();
 
