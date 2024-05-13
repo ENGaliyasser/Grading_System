@@ -21,7 +21,7 @@ public class BasisPathCoverageTest {
     // Test Case 1: File is empty
     @Test
     public void test1() {
-        String filename = "C:/Users/carol/Downloads/FinalProject/FinalProject/src/test/java/org/example/InputEmpty.txt";
+        String filename = "Grading_systen_team5/src/main/resources/InputEmpty.txt";
         InputHandler inputHandler = new InputHandler();
         Subject sub = inputHandler.read(filename);
 
@@ -33,7 +33,7 @@ public class BasisPathCoverageTest {
     // Test Case 2: Valid subject data
     @Test
     public void test2() {
-        String filename = "C:/Users/carol/Downloads/FinalProject/FinalProject/src/test/java/org/example/InputValid.txt";
+        String filename = "Grading_systen_team5/src/main/resources/InputValid.txt";
         InputHandler inputHandler = new InputHandler();
         Subject sub = inputHandler.read(filename);
 
@@ -45,7 +45,7 @@ public class BasisPathCoverageTest {
     // Test Case 3: Subject data but no Student data
     @Test
     public void test3() {
-        String filename = "C:/Users/carol/Downloads/FinalProject/FinalProject/src/test/java/org/example/InputSubjectNoStudents.txt";
+        String filename = "Grading_systen_team5/src/main/resources/InputSubjectNoStudents.txt";
         Subject sub = InputHandler.read(filename);
 
         // Verify that when there are no students, the returned Subject object is null
@@ -55,7 +55,7 @@ public class BasisPathCoverageTest {
     // Test Case 4: Subject Data not in first line
     @Test
     public void test4() {
-        String filename = "C:/Users/carol/Downloads/FinalProject/FinalProject/src/test/java/org/example/InputSubjectNotInFirstLine.txt";
+        String filename = "Grading_systen_team5/src/main/resources/InputSubjectNotInFirstLine.txt";
         InputHandler inputHandler = new InputHandler();
         Subject sub = inputHandler.read(filename);
 
@@ -67,7 +67,7 @@ public class BasisPathCoverageTest {
     // Test Case 5: Valid subject data but wrong student data
     @Test
     public void test5() {
-        String filename = "C:/Users/carol/Downloads/FinalProject/FinalProject/src/test/java/org/example/InputCorrectSubjectWrongStudents.txt";
+        String filename = "Grading_systen_team5/src/main/resources/InputSubjectWrongStudents.txt";
         InputHandler inputHandler = new InputHandler();
         Subject sub = inputHandler.read(filename);
 
