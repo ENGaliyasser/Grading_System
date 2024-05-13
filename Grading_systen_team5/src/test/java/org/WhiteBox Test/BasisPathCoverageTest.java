@@ -41,15 +41,15 @@ public class BasisPathCoverageTest {
         assertEquals("CSE333", sub.getCode());
         assertEquals(100, sub.getFullMark());
     }
-
+    
     // Test Case 3: Subject data but no Student data
     @Test
     public void test3() {
         String filename = "C:/Users/carol/Downloads/FinalProject/FinalProject/src/test/java/org/example/InputSubjectNoStudents.txt";
-        InputHandler inputHandler = new InputHandler();
-        Subject sub = inputHandler.read(filename);
+        Subject sub = InputHandler.read(filename);
 
-        assertEquals(0, sub.getStudents().size());
+        // Verify that when there are no students, the returned Subject object is null
+        assertEquals(null, sub);
     }
 
     // Test Case 4: Subject Data not in first line
