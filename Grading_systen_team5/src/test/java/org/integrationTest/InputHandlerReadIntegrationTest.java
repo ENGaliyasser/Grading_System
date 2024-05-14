@@ -1,13 +1,13 @@
 package org.integrationTest;
 
 import org.example.*;
-
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
 import org.junit.jupiter.api.BeforeEach;
 
 import java.io.ByteArrayOutputStream;
+import java.io.InputStream;
 import java.io.PrintStream;
 
 public class InputHandlerReadIntegrationTest {
@@ -37,7 +37,7 @@ public class InputHandlerReadIntegrationTest {
     @Test
     public void testEmptyStudent() {
 
-        String filename = "C:\\Users\\youssef\\Desktop\\programing\\Testing\\project\\Grading_System\\Grading_systen_team5\\src\\main\\resources\\EmptyStudent.txt";
+        String filename = "C:\\Users\\youssef\\Desktop\\programing\\Testing\\project\\Grading_System\\Grading_systen_team5\\src\\test\\resources\\EmptyStudent.txt";
 
         subject1 = InputHandler.read(filename);
         String expected = StudentValidator.STRING_EMPTY;
@@ -81,27 +81,28 @@ public class InputHandlerReadIntegrationTest {
         String filename = "C:\\Users\\youssef\\Desktop\\programing\\Testing\\project\\Grading_System\\Grading_systen_team5\\src\\main\\resources\\NoErrors.txt";
         subject1 = InputHandler.read(filename);
 
-        // assertEquals("Software Testing", subject1.getName());
-        // assertEquals("CSE333s", subject1.getCode());
-        // assertEquals(100, subject1.getFullMark());
+        assertEquals("Software testing", subject1.getName());
+        assertEquals("CSE333", subject1.getCode());
+        assertEquals(100, subject1.getFullMark());
 
-        // int expected = 6;
-        // int actual = subject1.getStudents().size();
-        // assertEquals(expected, actual);
-        String expected = "Invalid file name. File could not be opened.\n";
-        String actual = out.toString();
-
+        int expected = 6;
+        int actual = subject1.getStudents().size();
         assertEquals(expected, actual);
+        // String expected = "Invalid file name. File could not be opened.\n";
+        // String actual = out.toString();
+
+        // assertEquals(expected, actual);
     }
 
     // Testing error in one student entry
     @Test
     public void testOneStudentError() {
 
-        String filename = "D:\\senior 1 comp\\testing\\Project\\Testing-Project\\Test\\src\\TestFiles\\Integration\\testFile5.txt";
+        String filename = "C:\\Users\\youssef\\Desktop\\programing\\Testing\\project\\Grading_System\\Grading_systen_team5\\src\\main\\resources\\OneStudentError.txt";
         subject1 = InputHandler.read(filename);
 
-        String expected = "i dont know yet ";
+        String expected = "Error in student data:\n" + StudentValidator.STUDENT_NUMBER_INVALID_LENGTH
+                + StudentValidator.ERROR_ACTIVITES_MARK + StudentValidator.ERROR_FINAL_MARK;
         String actual = out.toString();
 
         assertEquals(expected, actual);
@@ -111,10 +112,16 @@ public class InputHandlerReadIntegrationTest {
     @Test
     public void testMultipleStudentsError() {
 
-        String filename = "D:\\senior 1 comp\\testing\\Project\\Testing-Project\\Test\\src\\TestFiles\\Integration\\testFile6.txt";
+        String filename = "C:\\Users\\youssef\\Desktop\\programing\\Testing\\project\\Grading_System\\Grading_systen_team5\\src\\main\\resources\\MultipleStudentsError.txt";
         subject1 = InputHandler.read(filename);
 
-        String expected = "i dont know yet ";
+        String expected = "Error in student data:\n" + StudentValidator.STUDENT_NUMBER_END
+                + StudentValidator.ERROR_FINAL_MARK + "Error in student data:\n"
+                + StudentValidator.STUDENT_NUMBER_INVALID_LENGTH
+                + StudentValidator.ERROR_ACTIVITES_MARK
+                + StudentValidator.ERROR_FINAL_MARK + "Error in student data:\n"
+                + StudentValidator.STUDENT_NUMBER_INVALID_LENGTH
+                + StudentValidator.ERROR_ORAL_MARK;
         String actual = out.toString();
 
         assertEquals(expected, actual);

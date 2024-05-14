@@ -1,6 +1,8 @@
 package org.example;
 
 import java.io.FileWriter;
+import java.io.File;
+
 import java.io.IOException;
 
 public class OutputHandler {
@@ -43,7 +45,8 @@ public class OutputHandler {
         /* Adding the list of students into the table with the specified format */
         for (Student st : subject.getStudents()) {
             st.getSum();
-            sb.append(String.format(format, st.getName(), st.getStudentNumber(), st.calculateGPA(), st.calculateGrade()));
+            sb.append(
+                    String.format(format, st.getName(), st.getStudentNumber(), st.calculateGPA(), st.calculateGrade()));
         }
 
         /* Formatting the end line of the table */
@@ -62,6 +65,7 @@ public class OutputHandler {
 
         try {
             FileWriter writer = new FileWriter("output.txt");
+
             writer.write(table);
             writer.close();
             System.out.println("Table successfully written to output.txt");
@@ -70,5 +74,3 @@ public class OutputHandler {
         }
     }
 }
-
-

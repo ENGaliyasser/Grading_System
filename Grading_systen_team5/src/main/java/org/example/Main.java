@@ -10,7 +10,8 @@ public class Main {
 
         if (args.length == 0) {
             ali = InputHandler.read(
-                    "E:\\Grading_System\\Grading_systen_team5\\src\\main\\resources\\NoErrors.txt");
+
+                    "Grading_System\\Grading_systen_team5\\src\\main\\resources\\NoErrors.txt");
         } else {
             ali = InputHandler.read(args[0]);
         }

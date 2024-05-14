@@ -1,0 +1,6 @@
+
+
+
+Software Testing,CSE333s,100
+Noha Adel,2001400,10,10,20,100
+Mohamed Adel,2001507,10,9,19,90
