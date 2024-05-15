@@ -20,6 +20,19 @@ public class CheckStudentData {
     }
 
     @Test
+    void wrongEveryTHING() {
+        Student student1 = new Student(" noha", "12345f78", 15, 13, 25, 70);
+        StudentValidator valid = new StudentValidator(student1);
+        String expected = StudentValidator.STUDENT_NAME_SPACE + StudentValidator.STUDENT_NUMBER_CONTAIN
+                + StudentValidator.ERROR_ACTIVITES_MARK + StudentValidator.ERROR_FINAL_MARK +
+                StudentValidator.ERROR_ORAL_MARK + StudentValidator.ERROR_MIDTERM_MARK;
+
+        String actual = valid.checkStudentData();
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
     void wrongName() {
 
         Student student1 = new Student("ali*ish", "12345678", 10, 10, 20, 55);
@@ -81,16 +94,4 @@ public class CheckStudentData {
         assertEquals(expected, actual);
     }
 
-    @Test
-    void wrongEveryTHING() {
-        Student student1 = new Student(" noha", "12345f78", 15, 13, 25, 70);
-        StudentValidator valid = new StudentValidator(student1);
-        String expected = StudentValidator.STUDENT_NAME_SPACE + StudentValidator.STUDENT_NUMBER_CONTAIN
-                + StudentValidator.ERROR_ACTIVITES_MARK + StudentValidator.ERROR_FINAL_MARK +
-                StudentValidator.ERROR_ORAL_MARK + StudentValidator.ERROR_MIDTERM_MARK;
-
-        String actual = valid.checkStudentData();
-
-        assertEquals(expected, actual);
-    }
 }

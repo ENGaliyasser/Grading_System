@@ -40,7 +40,7 @@ public class InputHandlerReadIntegrationTest {
         String filename = "C:\\Users\\youssef\\Desktop\\programing\\Testing\\project\\Grading_System\\Grading_systen_team5\\src\\test\\resources\\EmptyStudent.txt";
 
         subject1 = InputHandler.read(filename);
-        String expected = StudentValidator.STRING_EMPTY;
+        String expected = "Error: no Students";
         String actual = out.toString();
 
         assertEquals(expected, actual);
@@ -78,7 +78,7 @@ public class InputHandlerReadIntegrationTest {
     @Test
     public void testNoErrors() {
 
-        String filename = "C:\\Users\\youssef\\Desktop\\programing\\Testing\\project\\Grading_System\\Grading_systen_team5\\src\\main\\resources\\NoErrors.txt";
+        String filename = "C:\\Users\\youssef\\Desktop\\programing\\Testing\\project\\Grading_System\\Grading_systen_team5\\src\\test\\resources\\NoErrors.txt";
         subject1 = InputHandler.read(filename);
 
         assertEquals("Software testing", subject1.getName());

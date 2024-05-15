@@ -24,7 +24,7 @@ public class MainIntegration {
     @Test
     void testMainIntegration1() throws FileNotFoundException {
         String path[] = {
-                "C:\\Users\\youssef\\Desktop\\programing\\Testing\\project\\Grading_System\\Grading_systen_team5\\src\\main\\resources\\NoErrors.txt" };
+                "C:\\Users\\youssef\\Desktop\\programing\\Testing\\project\\Grading_System\\Grading_systen_team5\\src\\test\\resources\\NoErrors.txt" };
         Main.main(path);
         String actual = out.toString();
         String expectedString = "Table successfully written to output.txt\r\n"
@@ -49,7 +49,7 @@ public class MainIntegration {
                 "C:\\Users\\youssef\\Desktop\\programing\\Testing\\project\\Grading_System\\Grading_systen_team5\\src\\main\\resources\\EmptyStudent.txt" };
         Main.main(path);
         String actual = out.toString();
-        String expectedString = StudentValidator.STRING_EMPTY;
+        String expectedString = "Error: no Students";
         assertEquals(expectedString, actual);
 
     }
