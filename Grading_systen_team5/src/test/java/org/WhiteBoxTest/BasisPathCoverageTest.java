@@ -23,7 +23,7 @@ public class BasisPathCoverageTest {
     // Test Case 1: File is empty
     @Test
     public void test1() {
-        String filename = "C:\\Users\\carol\\Downloads\\Grading_System-main (2)\\Grading_System-main\\Grading_systen_team5\\src\\main\\resources\\InputEmpty";
+        String filename = "C:\\Users\\youssef\\Desktop\\programing\\Testing\\project\\Grading_System\\Grading_systen_team5\\src\\main\\resources\\InputEmpty";
         InputHandler inputHandler = new InputHandler();
         Subject sub = inputHandler.read(filename);
 
@@ -35,7 +35,7 @@ public class BasisPathCoverageTest {
     // Test Case 2: Valid subject data
     @Test
     public void test2() {
-        String filename = "C:\\Users\\carol\\Downloads\\Grading_System-main (2)\\Grading_System-main\\Grading_systen_team5\\src\\main\\resources\\InputValid";
+        String filename = "C:\\Users\\youssef\\Desktop\\programing\\Testing\\project\\Grading_System\\Grading_systen_team5\\src\\main\\resources\\InputValid";
         InputHandler inputHandler = new InputHandler();
         Subject sub = inputHandler.read(filename);
 
@@ -43,7 +43,7 @@ public class BasisPathCoverageTest {
         assertEquals("CSE333", sub.getCode());
         assertEquals(100, sub.getFullMark());
     }
-    
+
     // Test Case 3: Subject data but no Student data
     @Test
     public void test3() {
@@ -57,7 +57,7 @@ public class BasisPathCoverageTest {
     // Test Case 4: Subject Data not in first line
     @Test
     public void test4() {
-        String filename = "C:\\Users\\carol\\Downloads\\Grading_System-main (2)\\Grading_System-main\\Grading_systen_team5\\src\\main\\resources\\InputSubjectNotInFirstLine.txt";
+        String filename = "C:\\Users\\youssef\\Desktop\\programing\\Testing\\project\\Grading_System\\Grading_systen_team5\\src\\main\\resources\\InputSubjectNotInFirstLine.txt";
         InputHandler inputHandler = new InputHandler();
         Subject sub = inputHandler.read(filename);
 
@@ -69,7 +69,7 @@ public class BasisPathCoverageTest {
     // Test Case 5: Valid subject data but wrong student data
     @Test
     public void test5() {
-        String filename = "C:\\Users\\carol\\Downloads\\Grading_System-main (2)\\Grading_System-main\\Grading_systen_team5\\src\\main\\resources\\InputCorrectSubjectWrongStudents.txt";
+        String filename = "C:\\Users\\youssef\\Desktop\\programing\\Testing\\project\\Grading_System\\Grading_systen_team5\\src\\main\\resources\\InputCorrectSubjectWrongStudents.txt";
         InputHandler inputHandler = new InputHandler();
         Subject sub = inputHandler.read(filename);
 

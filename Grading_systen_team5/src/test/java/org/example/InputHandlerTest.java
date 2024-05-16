@@ -11,6 +11,7 @@ import org.mockito.MockitoAnnotations;
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
@@ -107,12 +108,12 @@ public class InputHandlerTest {
 
     @Test
     public void StudEmpty() throws IOException {
-        Path tempFile = tempDir.resolve("tempFile.txt");
+        Path tempFile = Paths.get("EmptyStudent.txt");
         try (BufferedWriter writer = Files.newBufferedWriter(tempFile)) {
             writer.write("Math,phm123,100\n");
         }
         InputHandler.read(tempFile.toString());
-        assertEquals("Error in student data:\n", output.toString());
+        assertEquals(StudentValidator.STRING_EMPTY, output.toString());
 
     }
 }

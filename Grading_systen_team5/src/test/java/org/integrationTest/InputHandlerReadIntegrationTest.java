@@ -40,7 +40,7 @@ public class InputHandlerReadIntegrationTest {
         String filename = "C:\\Users\\youssef\\Desktop\\programing\\Testing\\project\\Grading_System\\Grading_systen_team5\\src\\test\\resources\\EmptyStudent.txt";
 
         subject1 = InputHandler.read(filename);
-        String expected = "Error: no Students";
+        String expected = StudentValidator.STRING_EMPTY;
         String actual = out.toString();
 
         assertEquals(expected, actual);
@@ -88,10 +88,7 @@ public class InputHandlerReadIntegrationTest {
         int expected = 6;
         int actual = subject1.getStudents().size();
         assertEquals(expected, actual);
-        // String expected = "Invalid file name. File could not be opened.\n";
-        // String actual = out.toString();
 
-        // assertEquals(expected, actual);
     }
 
     // Testing error in one student entry
